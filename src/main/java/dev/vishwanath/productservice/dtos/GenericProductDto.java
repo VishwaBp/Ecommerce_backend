@@ -1,15 +1,14 @@
-package dev.vishwanath.productservice.models;
+package dev.vishwanath.productservice.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Product extends BaseModel{
+public class GenericProductDto {
     private String title;
     private String description;
     private String image;
-    private Category category;
+    private String category;
     private  double price;
-
 }
