@@ -10,18 +10,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@RestController()
+@RestController
 @RequestMapping("/api/v1/products/")
 public class ProductController {
+
     private ProductService productService;
-    public ProductController (@Qualifier("FakeStoreProductService") ProductService  productService){
+
+    public ProductController(ProductService productService) {
         this.productService = productService;
     }
     @GetMapping
     public List<GenericProductDto> getAllProducts(){
-        return productService.getAllproducts();
+        return productService.getAllProducts();
     }
-    //Localhost:8080/products/123
+
+    //localhost:8080/products/123
     @GetMapping("{id}")
     public GenericProductDto getProductById(@PathVariable("id") Long id) throws NotFoundException{
         return productService.getProductById(id);
@@ -29,17 +32,20 @@ public class ProductController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<GenericProductDto> deleteProductById(@PathVariable("id") Long id){
-        return new  ResponseEntity<>(
-        productService.deleteProductById(id),
-            HttpStatus.OK
+        return new ResponseEntity<>(
+                productService.deleteProduct(id),
+                HttpStatus.OK
         );
     }
-     @PostMapping
+
+    @PostMapping
     public GenericProductDto createProduct(@RequestBody GenericProductDto product){
-       return  productService.createProduct(product);
+        return productService.createProduct(product);
     }
+
     @PutMapping("{id}")
     public void updateProductById(){
+
     }
 
 

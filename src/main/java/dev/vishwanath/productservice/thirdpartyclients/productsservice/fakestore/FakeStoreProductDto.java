@@ -1,4 +1,4 @@
-package dev.vishwanath.productservice.dtos;
+package dev.vishwanath.productservice.thirdpartyclients.productsservice.fakestore;
 
 import dev.vishwanath.productservice.models.Category;
 import lombok.Getter;
