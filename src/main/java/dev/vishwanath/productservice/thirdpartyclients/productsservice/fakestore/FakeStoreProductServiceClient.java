@@ -48,7 +48,7 @@ public class FakeStoreProductServiceClient {
     }
 
     public FakeStoreProductDto getProductById(Long id) throws NotFoundException {
-//        FakeStoreProductService fakeStoreProductService = new FakeStoreProductService();
+
         RestTemplate restTemplate = restTemplateBuilder.build();
         ResponseEntity<FakeStoreProductDto> response =
                 restTemplate.getForEntity(specificProductRequestUrl, FakeStoreProductDto.class, id);
