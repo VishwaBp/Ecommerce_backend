@@ -4,12 +4,13 @@ import dev.vishwanath.productservice.dtos.GenericProductDto;
 import dev.vishwanath.productservice.exceptions.ExceptionDto;
 import dev.vishwanath.productservice.exceptions.NotFoundException;
 import dev.vishwanath.productservice.services.ProductService;
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+//import java.util.List;
 @RestController
 @RequestMapping("/api/v1/products/")
 public class ProductController {
@@ -19,10 +20,10 @@ public class ProductController {
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
-    @GetMapping
-    public List<GenericProductDto> getAllProducts(){
-        return productService.getAllProducts();
-    }
+//    @GetMapping
+//    public List<GenericProductDto> getAllProducts(){
+//        return productService.getAllProducts();
+//    }
 
     //localhost:8080/products/123
     @GetMapping("{id}")
